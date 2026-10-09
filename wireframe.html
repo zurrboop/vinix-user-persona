@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyFlow - Website Wireframe</title>
+  <link rel="stylesheet" href="wireframe.css">
+</head>
+<body>
+<main class="wrap">
+
+  <header class="title">
+    <h1>StudyFlow &ndash; Website Wireframe</h1>
+    <p>Low-fidelity wireframes designed for <b>Ayesha Malik</b> (student persona): simple weekly view, one-tap actions, mobile-first layout.</p>
+    <div class="legend">
+      <span><i class="k k-box"></i> Content block</span>
+      <span><i class="k k-img"></i> Image / icon placeholder</span>
+      <span><i class="k k-btn"></i> Button</span>
+      <span><i class="k k-line"></i> Text placeholder</span>
+      <span><i class="pin">1</i> Design note</span>
+    </div>
+  </header>
+
+  <!-- ================= SCREEN 1 ================= -->
+  <section class="screen">
+    <h2>Screen 1 &mdash; Dashboard (Home)</h2>
+    <div class="pair">
+
+      <!-- Desktop -->
+      <div>
+        <p class="label">Desktop</p>
+        <div class="frame desktop">
+          <div class="browser"><span></span><span></span><span></span><em>studyflow.app/dashboard</em></div>
+          <nav class="nav">
+            <div class="logo">LOGO</div>
+            <ul><li class="on">Dashboard</li><li>Tasks</li><li>Planner</li><li>Reminders</li></ul>
+            <div class="avatar"></div>
+            <i class="pin p-tr">1</i>
+          </nav>
+          <div class="content">
+            <div class="row between">
+              <div><div class="h">Hi, Ayesha! (Page heading)</div><div class="line s"></div></div>
+              <div class="btn">+ Add Task <i class="pin p-tr">2</i></div>
+            </div>
+            <div class="cols3">
+              <div class="box stat">Due Today<b>3</b></div>
+              <div class="box stat">This Week<b>9</b></div>
+              <div class="box stat">Completed<b>14</b></div>
+            </div>
+            <i class="pin p-l">3</i>
+            <div class="cols2">
+              <div class="box">
+                <div class="h">Due This Week</div>
+                <div class="item"><i class="chk"></i><div class="grow"><div class="line"></div><div class="line s"></div></div><small>Mon</small></div>
+                <div class="item"><i class="chk"></i><div class="grow"><div class="line"></div><div class="line s"></div></div><small>Wed</small></div>
+                <div class="item"><i class="chk"></i><div class="grow"><div class="line"></div><div class="line s"></div></div><small>Fri</small></div>
+                <i class="pin p-tr">4</i>
+              </div>
+              <div class="box">
+                <div class="h">Today's Study Plan</div>
+                <div class="slot">6:00 PM &ndash; Subject A</div>
+                <div class="slot">8:00 PM &ndash; Subject B</div>
+                <div class="slot dim">9:30 PM &ndash; Free</div>
+                <i class="pin p-tr">5</i>
+              </div>
+            </div>
+          </div>
+          <footer class="foot">Footer &middot; Help &middot; Settings &middot; Offline mode: ON</footer>
+        </div>
+      </div>
+
+      <!-- Mobile -->
+      <div>
+        <p class="label">Mobile</p>
+        <div class="frame mobile">
+          <div class="topbar"><div class="burger"><span></span><span></span><span></span></div><div class="logo">LOGO</div><div class="avatar sm"></div></div>
+          <div class="content">
+            <div class="h">Hi, Ayesha!</div>
+            <div class="cols3 tight">
+              <div class="box stat">Today<b>3</b></div>
+              <div class="box stat">Week<b>9</b></div>
+              <div class="box stat">Done<b>14</b></div>
+            </div>
+            <div class="box">
+              <div class="h">Due This Week</div>
+              <div class="item"><i class="chk"></i><div class="grow"><div class="line"></div></div><small>Mon</small></div>
+              <div class="item"><i class="chk"></i><div class="grow"><div class="line"></div></div><small>Wed</small></div>
+            </div>
+            <div class="box">
+              <div class="h">Today's Plan</div>
+              <div class="slot">6:00 PM &ndash; Subject A</div>
+            </div>
+          </div>
+          <div class="fab">+</div>
+          <div class="tabbar"><span class="on">Home</span><span>Tasks</span><span>Plan</span><span>Alerts</span></div>
+        </div>
+      </div>
+    </div>
+
+    <ol class="notes">
+      <li><b>Top navigation</b> &ndash; four links only, so Ayesha never feels overwhelmed. Becomes a bottom tab bar on mobile.</li>
+      <li><b>Add Task button</b> &ndash; always visible; one tap to start. A floating "+" on mobile.</li>
+      <li><b>Summary cards</b> &ndash; quick numbers answer "what's due?" in a second.</li>
+      <li><b>Due this week list</b> &ndash; one place for all deadlines instead of many apps and chats.</li>
+      <li><b>Today's study plan</b> &ndash; time slots built around her classes and tutoring.</li>
+    </ol>
+  </section>
+
+  <!-- ================= SCREEN 2 ================= -->
+  <section class="screen">
+    <h2>Screen 2 &mdash; Add Task</h2>
+    <div class="pair">
+
+      <div>
+        <p class="label">Desktop</p>
+        <div class="frame desktop">
+          <div class="browser"><span></span><span></span><span></span><em>studyflow.app/tasks/new</em></div>
+          <nav class="nav">
+            <div class="logo">LOGO</div>
+            <ul><li>Dashboard</li><li class="on">Tasks</li><li>Planner</li><li>Reminders</li></ul>
+            <div class="avatar"></div>
+          </nav>
+          <div class="content">
+            <div class="h">Add a New Task</div>
+            <div class="cols2">
+              <div class="box">
+                <label class="fld">Task title<div class="input"></div></label>
+                <i class="pin p-tr">1</i>
+                <label class="fld">Course<div class="input sel">Select course &#9662;</div></label>
+                <label class="fld">Due date<div class="input">DD / MM / YYYY &#128197;</div></label>
+                <label class="fld">Notes (optional)<div class="input tall"></div></label>
+              </div>
+              <div class="box">
+                <div class="h">Priority</div>
+                <div class="row gap"><span class="chip">Low</span><span class="chip on">Medium</span><span class="chip">High</span></div>
+                <i class="pin p-tr">2</i>
+                <div class="h mt">Reminder</div>
+                <div class="row between"><span>Remind me 1 day before</span><span class="toggle"><b></b></span></div>
+                <i class="pin p-r2">3</i>
+                <div class="h mt">Add to today's plan?</div>
+                <div class="row between"><span>Suggest a study slot</span><span class="toggle"><b></b></span></div>
+                <div class="row gap mt"><div class="btn">Save Task</div><div class="btn ghost">Cancel</div></div>
+                <i class="pin p-r3">4</i>
+              </div>
+            </div>
+          </div>
+          <footer class="foot">Footer &middot; Help &middot; Settings</footer>
+        </div>
+      </div>
+
+      <div>
+        <p class="label">Mobile</p>
+        <div class="frame mobile">
+          <div class="topbar"><div class="back">&larr;</div><div class="h">New Task</div><span></span></div>
+          <div class="content">
+            <label class="fld">Task title<div class="input"></div></label>
+            <label class="fld">Course<div class="input sel">Select &#9662;</div></label>
+            <label class="fld">Due date<div class="input">DD / MM / YYYY</div></label>
+            <div class="h">Priority</div>
+            <div class="row gap"><span class="chip">Low</span><span class="chip on">Med</span><span class="chip">High</span></div>
+            <div class="row between mt"><span>Remind me</span><span class="toggle"><b></b></span></div>
+            <div class="btn full">Save Task</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <ol class="notes">
+      <li><b>Short form</b> &ndash; only title, course and date are needed; everything else is optional, matching her low patience for setup.</li>
+      <li><b>Priority chips</b> &ndash; large tap targets instead of typing.</li>
+      <li><b>Reminder toggle</b> &ndash; a simple on/off switch keeps reminders helpful, not spammy.</li>
+      <li><b>Clear primary action</b> &ndash; "Save Task" is the filled button; "Cancel" is secondary.</li>
+    </ol>
+  </section>
+
+  <!-- ================= SCREEN 3 ================= -->
+  <section class="screen">
+    <h2>Screen 3 &mdash; Weekly Planner</h2>
+    <div class="pair">
+
+      <div>
+        <p class="label">Desktop</p>
+        <div class="frame desktop">
+          <div class="browser"><span></span><span></span><span></span><em>studyflow.app/planner</em></div>
+          <nav class="nav">
+            <div class="logo">LOGO</div>
+            <ul><li>Dashboard</li><li>Tasks</li><li class="on">Planner</li><li>Reminders</li></ul>
+            <div class="avatar"></div>
+          </nav>
+          <div class="content">
+            <div class="row between">
+              <div class="h">Week of 12 &ndash; 18 Oct</div>
+              <div class="row gap"><span class="chip">&larr; Prev</span><span class="chip">Next &rarr;</span></div>
+            </div>
+            <i class="pin p-l">1</i>
+            <div class="week">
+              <div class="day"><b>Mon</b><div class="blk">Class</div><div class="blk study">Study</div></div>
+              <div class="day"><b>Tue</b><div class="blk">Class</div><div class="blk work">Tutoring</div></div>
+              <div class="day"><b>Wed</b><div class="blk study">Study</div><div class="blk due">Due!</div></div>
+              <div class="day"><b>Thu</b><div class="blk">Class</div></div>
+              <div class="day"><b>Fri</b><div class="blk work">Tutoring</div><div class="blk study">Study</div></div>
+              <div class="day"><b>Sat</b><div class="blk study">Study</div></div>
+              <div class="day"><b>Sun</b><div class="blk free">Free</div></div>
+            </div>
+            <i class="pin p-l2">2</i>
+            <div class="row gap mt">
+              <span class="key"><i class="blk"></i>Class</span>
+              <span class="key"><i class="blk study"></i>Study</span>
+              <span class="key"><i class="blk work"></i>Work</span>
+              <span class="key"><i class="blk due"></i>Deadline</span>
+            </div>
+            <i class="pin p-r3">3</i>
+          </div>
+          <footer class="foot">Footer &middot; Help &middot; Settings</footer>
+        </div>
+      </div>
+
+      <div>
+        <p class="label">Mobile</p>
+        <div class="frame mobile">
+          <div class="topbar"><div class="burger"><span></span><span></span><span></span></div><div class="logo">LOGO</div><div class="avatar sm"></div></div>
+          <div class="content">
+            <div class="h">This Week</div>
+            <div class="daytabs"><span>M</span><span class="on">T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div>
+            <div class="slot">9:00 AM &ndash; Class</div>
+            <div class="slot study">3:00 PM &ndash; Tutoring</div>
+            <div class="slot study">8:00 PM &ndash; Study</div>
+            <div class="slot dim">Free time</div>
+          </div>
+          <div class="fab">+</div>
+          <div class="tabbar"><span>Home</span><span>Tasks</span><span class="on">Plan</span><span>Alerts</span></div>
+        </div>
+      </div>
+    </div>
+
+    <ol class="notes">
+      <li><b>Week navigation</b> &ndash; simple previous / next controls.</li>
+      <li><b>Colour-coded blocks</b> &ndash; classes, study, work and deadlines are distinguishable at a glance (use patterns as well as colour in the final design).</li>
+      <li><b>Legend</b> &ndash; explains the blocks. On mobile, the grid becomes day tabs with a list for easier thumb use.</li>
+    </ol>
+  </section>
+
+  <footer class="end">Wireframe for StudyFlow &middot; Grey boxes = layout only. Colours, fonts and images come in the final UI design.</footer>
+</main>
+</body>
+</html>
