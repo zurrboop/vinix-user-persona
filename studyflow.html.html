@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyFlow - Plan Your Study Week</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="studyflow.css">
+</head>
+<body>
+
+  <!-- ===== Top navigation (desktop) ===== -->
+  <header class="topnav">
+    <div class="topnav-inner">
+      <a class="brand" href="#dashboard"><span class="brand-mark">S</span> StudyFlow</a>
+      <nav class="links" aria-label="Main">
+        <button class="link" data-view="dashboard">Dashboard</button>
+        <button class="link" data-view="add">Add Task</button>
+        <button class="link" data-view="planner">Planner</button>
+      </nav>
+      <div class="actions">
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+        <div class="avatar" title="Ayesha Malik">AM</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ================= DASHBOARD ================= -->
+    <section id="view-dashboard" class="view">
+      <div class="page-head">
+        <div>
+          <h1 id="greeting">Hello, Ayesha!</h1>
+          <p class="sub" id="todayLabel"></p>
+        </div>
+        <button class="btn primary" data-view="add">+ Add Task</button>
+      </div>
+
+      <div class="stats">
+        <div class="stat s1"><span class="stat-icon">🔥</span><div><b id="statToday">0</b><small>Due today</small></div></div>
+        <div class="stat s2"><span class="stat-icon">📅</span><div><b id="statWeek">0</b><small>Due this week</small></div></div>
+        <div class="stat s3"><span class="stat-icon">✅</span><div><b id="statDone">0</b><small>Completed</small></div></div>
+      </div>
+
+      <div class="two-col">
+        <article class="card">
+          <h2>Due This Week</h2>
+          <ul id="taskList" class="tasks"></ul>
+          <p id="emptyMsg" class="empty" hidden>🎉 Nothing due. Enjoy your free time!</p>
+        </article>
+
+        <article class="card">
+          <h2>Today's Study Plan</h2>
+          <ul id="planList" class="plan"></ul>
+          <p class="hint">Tip: tick a task to mark it done. Your tasks are saved on this device.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= ADD TASK ================= -->
+    <section id="view-add" class="view" hidden>
+      <div class="page-head">
+        <div>
+          <h1>Add a New Task</h1>
+          <p class="sub">Only a title and due date are needed. Everything else is optional.</p>
+        </div>
+      </div>
+
+      <form id="taskForm" class="card form" novalidate>
+        <div class="form-grid">
+          <label class="field wide">
+            <span>Task title *</span>
+            <input type="text" id="fTitle" maxlength="80" placeholder="e.g. Finish database assignment" required>
+            <em class="err" id="errTitle" hidden>Please enter a title.</em>
+          </label>
+
+          <label class="field">
+            <span>Course</span>
+            <select id="fCourse">
+              <option>General</option>
+              <option>Data Structures</option>
+              <option>Databases</option>
+              <option>Software Engineering</option>
+              <option>Mathematics</option>
+              <option>Tutoring</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Due date *</span>
+            <input type="date" id="fDue" required>
+            <em class="err" id="errDue" hidden>Please choose a due date.</em>
+          </label>
+
+          <fieldset class="field wide">
+            <legend>Priority</legend>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="priority" value="Low"><span>Low</span></label>
+              <label class="chip"><input type="radio" name="priority" value="Medium" checked><span>Medium</span></label>
+              <label class="chip"><input type="radio" name="priority" value="High"><span>High</span></label>
+            </div>
+          </fieldset>
+
+          <label class="field wide switch-row">
+            <span>Remind me 1 day before</span>
+            <input type="checkbox" id="fRemind" class="switch" checked>
+          </label>
+
+          <label class="field wide">
+            <span>Notes (optional)</span>
+            <textarea id="fNotes" rows="3" maxlength="200" placeholder="Anything you want to remember..."></textarea>
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Save Task</button>
+          <button type="button" class="btn ghost" data-view="dashboard">Cancel</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- ================= PLANNER ================= -->
+    <section id="view-planner" class="view" hidden>
+      <div class="page-head">
+        <div>
+          <h1>Weekly Planner</h1>
+          <p class="sub" id="weekLabel"></p>
+        </div>
+        <div class="pager">
+          <button class="btn ghost" id="prevWeek">&larr; Prev</button>
+          <button class="btn ghost" id="thisWeek">Today</button>
+          <button class="btn ghost" id="nextWeek">Next &rarr;</button>
+        </div>
+      </div>
+
+      <div id="week" class="week"></div>
+
+      <div class="legend">
+        <span><i class="dot class"></i>Class</span>
+        <span><i class="dot study"></i>Study</span>
+        <span><i class="dot work"></i>Tutoring</span>
+        <span><i class="dot due"></i>Deadline</span>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Floating add button + mobile tab bar ===== -->
+  <button class="fab" data-view="add" aria-label="Add task">+</button>
+
+  <nav class="tabbar" aria-label="Mobile">
+    <button data-view="dashboard"><span>🏠</span>Home</button>
+    <button data-view="add"><span>➕</span>Add</button>
+    <button data-view="planner"><span>🗓️</span>Plan</button>
+  </nav>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="studyflow.js"></script>
+</body>
+</html>
